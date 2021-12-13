@@ -53,5 +53,12 @@
 // day12_1.run();
 
 //
-var day12_2 = require('./Day12/day12_2');
-day12_2.run();
+// var day12_2 = require('./Day12/day12_2');
+// day12_2.run();
+
+// var day13_1 = require('./Day13/day13_1');
+// day13_1.run();
+
+
+var day13_2 = require('./Day13/day13_2');
+day13_2.run();
