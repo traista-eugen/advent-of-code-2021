@@ -22,7 +22,7 @@ async function run() {
     let step = 0;
     const templateArray = [...template];
     console.log(templateArray);
-    let steps =4;
+    let steps =40;
     pairOcc = {};
     
     for (let i=0; i < templateArray.length-1;i++){
@@ -44,21 +44,21 @@ async function run() {
             const tempv = pairsMap[p];
             const newLeftPair = p[0] + tempv;
             const newRightPair = tempv + p[1];
-            console.log('new', newLeftPair, newRightPair, tempv, pairOcc[p]);
+            // console.log('new', newLeftPair, newRightPair, tempv, pairOcc[p]);
             if(!tempOcc[newLeftPair]) {
-                tempOcc[newLeftPair] = 1;
+                tempOcc[newLeftPair] = pairOcc[p];
             }
             else tempOcc[newLeftPair]+=pairOcc[p];
 
             if(!tempOcc[newRightPair]) {
-                tempOcc[newRightPair] = 1;
+                tempOcc[newRightPair] = pairOcc[p];
             }
             else tempOcc[newRightPair]+=pairOcc[p];
         }
 
         pairOcc = tempOcc;
 
-        console.log('stepppp', step + 1, occurances, pairOcc);
+        // console.log('stepppp', step + 1, occurances, pairOcc);
         step++;
     }
 
@@ -69,6 +69,8 @@ async function run() {
             occurances[firstL]=pairOcc[k];
         else occurances[firstL]+=pairOcc[k];
     }
+
+    occurances[templateArray[templateArray.length-1]]++;
 
     const min = Math.min(...Object.values(occurances));
     const max = Math.max(...Object.values(occurances));
