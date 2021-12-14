@@ -22,7 +22,7 @@ async function run() {
     let step = 0;
     const templateArray = [...template];
     console.log(templateArray);
-    let steps = 10;
+    let steps =4;
     pairOcc = {};
     
     for (let i=0; i < templateArray.length-1;i++){
@@ -38,43 +38,30 @@ async function run() {
     console.log(pairOcc)
     let l = templateArray.length;
     while(step < steps) {
-        let tempOcc = {}
+        let tempOcc = {};
         let occKeys = Object.keys(pairOcc);
         for(let p of occKeys){
             const tempv = pairsMap[p];
             const newLeftPair = p[0] + tempv;
             const newRightPair = tempv + p[1];
+            console.log('new', newLeftPair, newRightPair, tempv, pairOcc[p]);
             if(!tempOcc[newLeftPair]) {
                 tempOcc[newLeftPair] = 1;
-                //continue;
             }
-            else tempOcc[newLeftPair]++;
+            else tempOcc[newLeftPair]+=pairOcc[p];
 
             if(!tempOcc[newRightPair]) {
                 tempOcc[newRightPair] = 1;
-                //continue;
             }
-            else tempOcc[newRightPair]++;
-
-            // if(!occurances[tempv]) {
-            //     occurances[tempv] = 1;
-            //     //continue;
-            // }
-            // else occurances[tempv]+= pairOcc[p];
+            else tempOcc[newRightPair]+=pairOcc[p];
         }
 
         pairOcc = tempOcc;
 
-        console.log('step', step, occurances, pairOcc);
+        console.log('stepppp', step + 1, occurances, pairOcc);
         step++;
     }
 
-
-    // for(let el of templateArray){
-    //     if(!occurances[el])
-    //         occurances[el]=1;
-    //     occurances[el]++;
-    // }
 
     for(let k in pairOcc){
         let firstL = k[0];
