@@ -173,7 +173,7 @@ async function run() {
     for(let i =0;i<6;i++) {
         let rowToJoin=[];
         for(let j=0;j<40;j++){
-            rowToJoin.push(newM?.[i]?.[j] ? 'X' : '0');
+            rowToJoin.push(newM?.[i]?.[j] ? 'X' : ' ');
         }
 
         console.log(rowToJoin.join(''));
