@@ -76,3 +76,38 @@
 
 // var day15_2 = require('./Day15/day15_2');
 // day15_2.run();
+
+// var day16_1 = require('./Day16/day16_1');
+// day16_1.run();
+
+
+// var day16_2 = require('./Day16/day16_2');
+// day16_2.run();
+
+var day17_1 = require('./Day17/day17_1');
+day17_1.run();
+
+
+// var day17_2 = require('./Day17/day17_2');
+// day17_2.run();
+
+// var day18_1 = require('./Day18/day18_1');
+// day18_1.run();
+
+
+// var day18_2 = require('./Day18/day18_2');
+// day18_2.run()
+
+// var day19_1 = require('./Day19/day19_1');
+// day19_1.run();
+
+
+// var day19_2 = require('./Day19/day19_2');
+// day19_2.run()
+
+// var day20_1 = require('./Day20/day20_1');
+// day20_1.run();
+
+
+// var day20_2 = require('./Day20/day20_2');
+// day20_2.run()
